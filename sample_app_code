@@ -1,0 +1,28 @@
+# calculate the sqrt of a number
+def sqrt(x):
+    return x**0.5
+import os
+
+def main(inputs):
+    print("FILES:", os.listdir("/tmp"))
+    print("CWD:", os.getcwd())
+
+
+    # Extract input values from the input dictionary
+    base = inputs['base']
+    height = inputs['height']
+    calculate_perimeter = inputs["calculate_perimeter"]
+
+    area = round(0.5 * base * height, 2)              # Area
+    hypotenuse = round(sqrt(base**2 + height**2), 2)  # Hypotenuse
+    perimeter = round(base + height + hypotenuse, 2)  # Perimeter
+
+    # Return calculated values to be displayed in outputs
+    return {
+        "area": area,
+        "hypotenuse": hypotenuse,
+        "perimeter": perimeter,
+        "calculate_perimeter": calculate_perimeter,
+        "base": base,
+        "height": height
+    }
